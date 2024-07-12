@@ -44,9 +44,9 @@ export const fetchItems = createAsyncThunk(
         });
 
         const requestPayload: PropertyListRequest = { pagination, filters };
-
+        console.log(process.env.EXPO_PUBLIC_API_URL)
         const response = await axios.post<GetPropertiesResponse>(
-            'http://192.168.1.20:5000/api/property/list',
+            `${process.env.EXPO_PUBLIC_API_URL}/property/list`,
             requestPayload
         );
 

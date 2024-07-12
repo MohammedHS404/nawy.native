@@ -19,7 +19,7 @@ export const fetchPropertyDetails = createAsyncThunk(
     'propertyDetails/fetchPropertyDetails',
     async (slug: string) => {
         console.log(slug);
-        const response = await axios.get<PropertyResponse>(`http://192.168.1.20:5000/api/property/${slug}`);
+        const response = await axios.get<PropertyResponse>(`${process.env.EXPO_PUBLIC_API_URL}/property/${slug}`);
         console.log(response.data.id);
         return response.data;
     }
