@@ -44,7 +44,7 @@ const PropertyDetails = () => {
 
     return (
         <ScrollView contentContainerStyle={styles.container}>
-            <Image placeholder={imageBlurHash} contentFit='cover' transition={200}  source={{ uri: property.images?.[0] }} style={styles.mainImage} />
+            <Image placeholder={imageBlurHash} contentFit='cover' transition={200} source={{ uri: property.images?.[0] }} style={styles.mainImage} />
             <View style={styles.details}>
                 <Text variant="titleLarge" style={{ fontSize: 18, fontWeight: 'bold', marginBottom: 12 }}>{property.title}</Text>
 
