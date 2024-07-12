@@ -1,0 +1,2 @@
+export const imageBlurHash = '|kGI}=RPaIoJROM{WBbcW=%%Mxi^jsV?t7ayf+a#E1aeV?ofbbxvaeofaeROtRRja#WXbIWCofoLjFkCfkayWBWBofa|oft5RjkCofoeayj]WBWCkCWBoLazj[j@ayj[a|t7off6WBbHayayoeayR*fkj?ayofj[j[WBj?'
+export const planBlurHash='|DSPX^%M-;D%xvxu%Mt7M{9Fxut7IUxuofayaxofxuRiaytRIUkCoff7j]~XM{IU%MRjWBRjfPozxuRjM{t7oyRjWBt7f8oMofWCaxofWBayofWBWBaza#j[axj]WBj[ozkBWAofofRjt7ofWBj[NFj[ayfQofayayWVj@'

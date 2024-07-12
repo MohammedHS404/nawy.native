@@ -1,37 +1,22 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync();
-
+import store from '@/data/store';
+import { Slot, Stack, Tabs } from 'expo-router';
+import { PaperProvider, MD2LightTheme as DefaultTheme } from 'react-native-paper';
+import { Provider as StoreProvider } from 'react-redux';
+import { MaterialIcons } from '@expo/vector-icons';
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-    </ThemeProvider>
+    <StoreProvider store={store} >
+      <PaperProvider theme={theme}>
+        <Stack screenOptions={{ headerTitle: 'Listings' }}>
+        </Stack>
+      </PaperProvider>
+    </StoreProvider>
   );
 }
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors
+  },
+};
